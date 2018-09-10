@@ -1,5 +1,30 @@
 # Sparta Node Sample App
 
+## Instructions to setting up a VirtualBox
+
+1. <h3> Software</h3>
+  * Before a virtualbox can be initiated you need to install the latest versions of:
+    * VirtualBox: https://www.virtualbox.org/wiki/Downloads
+    * Vagrant: https://www.vagrantup.com/downloads.html
+    * Atom
+2. <h3>Setting up the virtual environment on terminal</h3>
+  * To check if vagrant has been successfully installed run
+    `vagrant`
+    in the terminal, if it has been it successfully install the terminal should print out a list of commands you can run with `vagrant`.
+  * The first command is to create a vagrant file, `vagrant init`. Once your file has been initialised open it in **atom**
+  * The next step is to edit this file, delete everything currently in the file and replace it with,
+  ```
+  Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.network("private_network", ip: "192.168.10.100")
+    config.hostsupdater.aliases = ["development.local"]
+  end
+  ```
+  * Save the file and run `vagrant up` in the terminal, this sets up the virtual machine
+  * To check if that has worked run `vagrant ssh`, this allows the user access to the virtual machine
+  * Exit the machine, `exit`, and run `vagrant plugin install vagrant-hostsupdater`. This is a Vagrant plugin that manages hosts files within a multi-machine environment.
+  * After the plugin has install access the virtual machine, `vagrant ssh`, and first run the command `sudo apt-get update`. This updates the package lists for upgrades and new packages.
+  * Finally run the command `sudo apt-get install nginx`. Nginx is a web server that will run on your local machine allowing you to run a web-application.
 
 
 ## Description
