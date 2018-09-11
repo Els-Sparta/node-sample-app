@@ -1,3 +1,5 @@
+# Allows you to simply run vagrant up
+system "vagrant plugin install vagrant-hostsupdater"
 # To tell vagrant what version to run in, in this case 2
 Vagrant.configure("2") do |config|
   # What system to run in

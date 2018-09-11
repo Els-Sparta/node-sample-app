@@ -6,7 +6,7 @@
   * Before a virtualbox can be initiated you need to install the latest versions of:
     * VirtualBox: https://www.virtualbox.org/wiki/Downloads
     * Vagrant: https://www.vagrantup.com/downloads.html
-    * Atom
+    * Atom: https://atom.io/
 2. <h3>Setting up the virtual environment on terminal</h3>
   * To check if vagrant has been successfully installed run
     `vagrant`
